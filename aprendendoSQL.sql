@@ -25,3 +25,23 @@ ALTER TABLE livros ADD CONLUMN paginas INTERGER;
 ALTER TABLE livros DROP COLUMN paginas ;
 ALTER TABLE livros ALTER COLUMN titulo TYPE VARCHAR (200);
 ALTER TABLE livros ADD CONSTRAINT chk_preco CHECK (preco > 0 );
+
+--ERRADO--
+CREATE TABLE consultas (
+    id INTEGER ,
+    paciente VARCHAR (100),
+    medico VARCHAR (100),
+    data_consulta timestamp,
+    valor real,
+    status varchar(50)
+);
+
+--CERTO--
+CREATE TABLE consultas if not exists(
+  id serial primary key;
+  paciente varchar(100) not null ;
+  medico varchar(100) not null;
+  data_consulta timestamptz ;
+  valor decimal;
+  status varchar(50)
+);

@@ -45,3 +45,35 @@ CREATE TABLE consultas if not exists(
   valor decimal;
   status varchar(50)
 );
+
+--APRENDENDO SQL--
+
+--buscando as faixas (limitando a 10 para não travar a tela)
+select * from track 
+limit 10 
+
+/*
+INTEGER - numero inteiro
+SERIAL - inteiro com incremento 
+VARCHAR(n) - texto com limite de caractere
+TEXT - texto sem limite
+NUMERIC(p,s) - numero com decimais
+TIMESTAMPTZ - data e hora com fuso horário 
+BOOLEAN - verdadeiro ou falso 
+*/
+
+/*ATIVIDADE- AULA 01*/
+-- 1-Todos os artistas --
+select * from artist
+
+-- 2-Primeiras 5 faixas --
+select * from track
+limit 5
+
+-- 3-País dos clientes (os 10 primeiros)--
+select first_name, last_name, country from customer
+limit 10 
+
+-- 4-Gêneros musicais --
+select genre_id, name from genre
+
